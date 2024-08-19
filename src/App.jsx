@@ -135,8 +135,8 @@ function App() {
   const populateModal = (selectedChar) => {
     modalRef.current.style.display = "flex";
     // check if there is an icon image
-    imgCharRef.current.src = "./src/assets/"+ selectedChar +"/"+ selectedChar +".png";
-    imgGameplayRef.current.src = "./src/assets/"+ selectedChar +"/gameplay.jpg";
+    imgCharRef.current.src = "./images/"+ selectedChar +"/"+ selectedChar +".png";
+    imgGameplayRef.current.src = "./images/"+ selectedChar +"/gameplay.jpg";
     charName.current.innerHTML = getName(characters, selectedChar);
     let transformations = getTransformations(characters, selectedChar);
 
@@ -159,7 +159,7 @@ function App() {
         }
 
         let img = document.createElement('img');
-        img.src = './src/assets/' + transformations[i] + '/icon.png';
+        img.src = './images/' + transformations[i] + '/icon.png';
         img.onclick = () => populateModal(transformations[i]);
 
         transformationDiv.appendChild(img);
