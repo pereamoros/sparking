@@ -1,0 +1,281 @@
+// @use "sass:math";
+
+:root {
+    /* grid variables */
+    --size: 14px;
+    --gap: 1px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: system-ui;
+    background-color: #131322;
+    color: white;
+
+    // background-color: hsla(117, 40%, 15%, 1);
+    // background-image: radial-gradient(circle at 3% 92%, hsla(161, 100%, 50%, 1) 0%, transparent 67%), radial-gradient(circle at 46% 94%, hsla(227.6470588235294, 100%, 50%, 1) 0%, transparent 81%), radial-gradient(circle at 93% 95%, hsla(230.2941176470588, 100%, 23%, 1) 0%, transparent 66%), radial-gradient(circle at 89% 8%, hsla(243.52941176470586, 100%, 9%, 1) 0%, transparent 150%);
+    // background-blend-mode: normal, normal, normal, normal;
+}
+  
+main {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3em;
+}
+
+.logic-box {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+    gap: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+button {
+    padding: 15px 20px;
+    border: 0;
+    border-radius: 8px;
+    background-color:#146;
+    color:#fff;
+    cursor: pointer;
+}
+  
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--size) );
+    grid-template-rows: repeat(auto-fit, var(--size) );
+    place-items: start center;
+    gap: var(--gap) calc(var(--gap)/3);
+    transition: all .3s ease-in-out;
+    // grid-template-areas:
+    // ". . 1 2 3 4 5 6 . 7 8 9 10 11 12 . ."
+    // ". 13 14 15 16 17 18 19 20 21 22 23 24 25 26 . ."
+    // ". 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 ."
+    // "42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 ."
+    // "58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74"
+    // "75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 ."
+    // "91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107"
+    // "108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 ."
+    // ". 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 ."
+    // ". 139 140 141 142 143 144 145 146 147 148 149 150 151 152 . ."
+    // ". . 153 154 155 156 157 158 . 159 160 161 162 163 164 . .";
+    // grid-template-areas:
+    // "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17"
+    // "18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34"
+    // "35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51"
+    // "52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68"
+    // "69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85"
+    // "86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102"
+    // "103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119"
+    // "120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136"
+    // "137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153"
+    // "154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170"
+    // "171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187"
+    // ;
+    // grid-template-areas:
+    // ". . jeice 2 yamcha videl tenshinhan 6 . goku-black goku-black-ssj-rose master-roshi-max-power master-roshi 11 beerus . ."
+    // ". burter 14 15 16 17 18 19 frieza-super fused-zamasu fused-zamasu-half-corrupted goku-mid 24 25 whis . ."
+    // ". kale krilin 29 dyspo spopovitch piccolo-early 33 golden-frieza 35 android-18 zamasu goku-mid-ssj 39 40 roasie ."
+    // "kale-berserk kale-ssj gohan-kid 45 46 nappa 48 49 cell-perfect-form 51 vegeta-mid-ssj super-vegeta 54 super-trunks ribrianne kakunza ."
+    // "caulifla caulifla-ssj2 60 dabura future-gohan hit vegeta-saiyan vegeta-saiyan-ozaru goku-ultra-instinct 67 68 vegeta-mid bardock trunks-ssj 72 73 74"
+    // "kefla kefla-ssj2 77 future-gohan-ssj mr-satan 80 goku-early goku-ultra-instinct-sign vegeta-super-ssj vegeta-super 85 86 trunks-kid gotenks goten 90 ."
+    // "kefla-ssj vegeta-end 93 94 majin-buu 96 97 98 gogeta-ssj-blue vegeta-super-ssj-blue vegeta-super-ssj-god 102 trunks-kid-ssj gotenks-ssj gotenks-ssj3 goten-ssj 107"
+    // "vegeta-end-ssj2 vegeta-end-ssj 110 goku-end-ssj3 112 113 goku-super-ssj-blue goku-ssj-god gogeta gogeta-ssj android-17-super 119 120 gohan-adult gohan-adult-ssj2 123 ."
+    // ". majin-vegeta vegetto goku-end-ssj2 goku-end 128 goku-super-ssj goku-super 131 aniraza 133 134 trunks-super 136 broly broly-ssj-full-power ."
+    // ". vegetto-ssj vegetto-ssj-blue goku-end-ssj toppo 143 144 145 jiren-full-power jiren 148 trunks-super-ssj 150 151 broly-ssj . ."
+    // ". . 153 154 155 future-trunks-ssj future-trunks 158 . yajirobe 160 radditz 162 bergamo 164 . ."
+    // ;
+    // grid-template-areas:
+    // ". . jeice . yamcha videl tenshinhan . . goku-black goku-black-ssj-rose master-roshi-max-power master-roshi . beerus . ."
+    // ". burter . . . . . . frieza-super fused-zamasu fused-zamasu-half-corrupted goku-mid . . whis . ."
+    // ". kale krilin . dyspo spopovitch piccolo-early . golden-frieza . android-18 zamasu goku-mid-ssj . . roasie ."
+    // "kale-berserk kale-ssj gohan-kid . . nappa . . cell-perfect-form . vegeta-mid-ssj super-vegeta . super-trunks ribrianne kakunza ."
+    // "caulifla caulifla-ssj2 . dabura future-gohan hit vegeta-saiyan vegeta-saiyan-ozaru goku-ultra-instinct . . vegeta-mid bardock trunks-ssj . . ."
+    // "kefla kefla-ssj2 . future-gohan-ssj mr-satan . goku-early goku-ultra-instinct-sign vegeta-super-ssj vegeta-super . . trunks-kid gotenks goten . ."
+    // "kefla-ssj vegeta-end . . majin-buu . . . gogeta-ssj-blue vegeta-super-ssj-blue vegeta-super-ssj-god . trunks-kid-ssj gotenks-ssj gotenks-ssj3 goten-ssj ."
+    // "vegeta-end-ssj2 vegeta-end-ssj . goku-end-ssj3 . . goku-super-ssj-blue goku-ssj-god gogeta gogeta-ssj android-17-super . . gohan-adult gohan-adult-ssj2 . ."
+    // ". majin-vegeta vegetto goku-end-ssj2 goku-end . goku-super-ssj goku-super . aniraza . . trunks-super . broly broly-ssj-full-power ."
+    // ". vegetto-ssj vegetto-ssj-blue goku-end-ssj toppo . . . jiren-full-power jiren . trunks-super-ssj . . broly-ssj . ."
+    // ". . . . . future-trunks-ssj future-trunks . . yajirobe . radditz . bergamo . . ."
+    // ;
+}
+
+.gallery-img {
+    width: calc(var(--size) * 6);
+    height: calc(var(--size) * 6);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    grid-column: auto / span 6;
+    grid-row: auto / span 7;
+    background-color: #1473c9;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-img[data-char^="empty-"], .gallery-img[data-char=""] {
+    visibility: hidden;
+    opacity: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+  
+.gallery-img:before {
+    content: '';
+    background-color: #146;
+    width: calc(var(--size) * 6);
+    height: calc(var(--size) * 6);
+    display: block;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    position: absolute;
+    transform: scale(0.95);
+    // background-image: url(./src/assets/gameplay.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-img span {
+    font-size: 28px;
+    position: relative;
+}
+  
+.gallery-img:hover:before {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+@for $i from 1 through 20 {
+    @if $i % 2 == 0 {
+        .staggered-#{$i} {
+            transform: translateY(calc((-25%*#{$i}) + (var(--gap) *#{$i} )));
+        }
+    } @else {
+        .staggered-#{$i} {
+            transform: translateX(calc(50% + var(--gap))) translateY(calc((-25% * #{$i}) + (var(--gap) * #{$i})));
+        }
+    }
+    
+}
+
+// MODAL
+.modal {
+    display: none;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85);
+    align-items: center;
+    animation: fadeIn .5s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.modal-content {
+    margin: 0 auto;
+    max-width: 960px;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    & img#selected-char {
+        position: absolute;
+        width: auto;
+        height: 800px;
+        top: -150px;
+        left: -250px;
+    }
+}
+.close {
+    color: #e7e7e7;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+
+    &:hover,
+    &:focus {
+        color: #6d6d6d;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.char-name {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.transformations {
+    position: absolute;
+    display: flex;
+    right: 50px;
+    bottom: 100px;
+    gap: 10px;
+
+    & .transformation {
+        border: 1px solid;
+        backdrop-filter: blur(10px);
+        filter: grayscale(1);
+        cursor: pointer;
+        transition: filter .2s ease-in-out;
+    }
+
+    & .transformation:hover, & .transformation-selected{
+        filter: none;
+    }
+
+    & img {
+        width: 80px;
+    }
+}
+
+.arrow-nav{
+    background-color: #e8f5e4;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+
+    & svg {
+        stroke: #202529;
+    }
+
+    &:hover {
+        background-color: #777c80;
+    }
+}
