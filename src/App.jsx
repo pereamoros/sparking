@@ -265,9 +265,9 @@ function App() {
               <style>
                 {`
                   .gallery-img[data-char=${gridCharacters[index]}]:before {
-                    background-image: url(./src/assets/${gridCharacters[index]}/icon.png), url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
-                    background-image: url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
-                    background-image: url(./src/assets/${gridCharacters[index]}/icon.png);
+                    // background-image: url(./src/assets/${gridCharacters[index]}/icon.png), url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
+                    // background-image: url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
+                    background-image: url(/images/${gridCharacters[index]}/icon.png);
                   }
                 `}
               </style>
