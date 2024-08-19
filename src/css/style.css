@@ -15,7 +15,10 @@ body {
   line-height: 1.5;
   font-family: system-ui;
   background-color: #131322;
-  color: white; }
+  color: white;
+  background-color: #183617;
+  background-image: radial-gradient(circle at 3% 92%, #010c1b 0%, transparent 67%), radial-gradient(circle at 46% 94%, #001434 0%, transparent 81%), radial-gradient(circle at 93% 95%, #001375 0%, transparent 66%), radial-gradient(circle at 89% 8%, #03002e 0%, transparent 150%);
+  background-blend-mode: normal, normal, normal, normal; }
 
 main {
   max-width: 1240px;
@@ -24,7 +27,9 @@ main {
   @media (min-width: 1600px) {
     main {
       --size: 14.5px;
-      max-width: 1600px; } }
+      max-width: 1600px;
+      max-height: 950px;
+      overflow: hidden; } }
 
 h1 {
   text-align: center;
@@ -85,7 +90,7 @@ button {
 
 .gallery-img:before {
   content: '';
-  background-color: #146;
+  background-color: #114669;
   width: calc(var(--size) * 6);
   height: calc(var(--size) * 6);
   display: block;

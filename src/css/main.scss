@@ -31,9 +31,9 @@ body {
     background-color: #131322;
     color: white;
 
-    // background-color: hsla(117, 40%, 15%, 1);
-    // background-image: radial-gradient(circle at 3% 92%, hsla(161, 100%, 50%, 1) 0%, transparent 67%), radial-gradient(circle at 46% 94%, hsla(227.6470588235294, 100%, 50%, 1) 0%, transparent 81%), radial-gradient(circle at 93% 95%, hsla(230.2941176470588, 100%, 23%, 1) 0%, transparent 66%), radial-gradient(circle at 89% 8%, hsla(243.52941176470586, 100%, 9%, 1) 0%, transparent 150%);
-    // background-blend-mode: normal, normal, normal, normal;
+    background-color: hsla(117, 40%, 15%, 1);
+    background-image: radial-gradient(circle at 3% 92%, #010c1b 0%, transparent 67%), radial-gradient(circle at 46% 94%, #001434 0%, transparent 81%), radial-gradient(circle at 93% 95%, #001375 0%, transparent 66%), radial-gradient(circle at 89% 8%, #03002e 0%, transparent 150%);
+    background-blend-mode: normal, normal, normal, normal;
 }
   
 main {
@@ -43,6 +43,8 @@ main {
     @include respond(big-desktop) {
         --size: 14.5px;
         max-width: 1600px;
+        max-height: 950px;
+        overflow: hidden;
     }
 }
 
@@ -50,7 +52,7 @@ h1 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 3em;
-    
+
     @include respond(phone) {
         font-size: 38px;
         text-wrap: balance;
@@ -112,7 +114,7 @@ button {
   
 .gallery-img:before {
     content: '';
-    background-color: #146;
+    background-color: #114669;
     width: calc(var(--size) * 6);
     height: calc(var(--size) * 6);
     display: block;
