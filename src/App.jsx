@@ -254,19 +254,9 @@ function App() {
         {
           gridCharacters.map((_, index) => (
             <div className="gallery-img" key={index} data-char={gridCharacters[index]} onClick={() => populateModal(gridCharacters[index])}>
-              {/* <img 
-                src={`./src/assets/${gridCharacters[index]}/icon.png`} 
-                onError={(e) => {
-                  e.target.onerror = null; // Previene la recursión en caso de que gameplay.jpg también esté ausente
-                  e.target.src = `./src/assets/${gridCharacters[index]}/gameplay.jpg`;
-                }} 
-                alt="Character"
-              /> */}
               <style>
                 {`
                   .gallery-img[data-char=${gridCharacters[index]}]:before {
-                    // background-image: url(./src/assets/${gridCharacters[index]}/icon.png), url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
-                    // background-image: url(./src/assets/${gridCharacters[index]}/gameplay.jpg);
                     background-image: url(/images/${gridCharacters[index]}/icon.png);
                   }
                 `}
@@ -277,7 +267,7 @@ function App() {
       </div>
 
       <div className="modal" ref={modalRef}>
-        <div ref={prevChar} className="arrow-nav">
+        <div ref={prevChar} className="arrow-nav arrow-nav__left">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M15 6l-6 6l6 6" />
@@ -289,7 +279,7 @@ function App() {
           <img ref={imgGameplayRef} />
           <div ref={charName} className='char-name'></div>
         </div>
-        <div ref={nextChar} className="arrow-nav">
+        <div ref={nextChar} className="arrow-nav arrow-nav__right">
           <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M9 6l6 6l-6 6" />
